@@ -1,0 +1,9 @@
+I|N
+We|N
+You|N
+What|Q
+Which|Q
+like|V
+play|V
+love|V
+awesome|A
