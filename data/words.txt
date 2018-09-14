@@ -7,3 +7,4 @@ like|V
 play|V
 love|V
 awesome|A
+game|N
