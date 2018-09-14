@@ -1,3 +1,4 @@
+import FiniteStateAutomata as fsa
 import re
 
 print ('welcome to chat-boi say sommethig:\n')
