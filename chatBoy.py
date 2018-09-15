@@ -1,6 +1,7 @@
 import re,random
-
 #Method to check if a keyword is in the data base
+# @retm list_games which consist in a like|game
+# format
 def isInIt(list,target,print): 
 	my_RegExp = re.compile(r'[y,n]\|+[\w\s\"]*{0}[\w\s\"]*\|+'.format(target))
 	matches = my_RegExp.finditer(list)
@@ -45,7 +46,8 @@ for item in splt_str:
 		if item.lower() == splt_line[0].lower():
 			new_format = new_format+splt_line[1].rstrip()
 			itemFound = True
-	if not itemFound:
+	#If the word is not a keyword in data, it may be a keyword in games
+	if not itemFound: 
 		games_data = open("data/games.txt",'r')
 		data_string = ""
 		for line in games_data:
@@ -60,8 +62,9 @@ for pattern in format:
 	if spltPat[0] == new_format:
 		answer = spltPat[1].rstrip()
 #Provides an answer depending on the pattern
-if answer == "":
+if answer == "": #In case an answer was not found
 	print("I did not get that")
+# If more than one game match the one mentioned by the user
 elif len(list_games1) > 1:
 	while(True):
 		try:
@@ -77,5 +80,11 @@ elif len(list_games1) > 1:
 			else:
 				print("I did not like "+currentGame)
 			break
+# If only one game matched the one mentioned by the user
 else:
-	print(answer+" "+list_games1[0])
+	likeCurrent = list_games1.pop()
+	currentGame = list_games1.pop()
+	if likeCurrent == "Y":
+		print("I really like "+currentGame)
+	else:
+		print("I did not like "+currentGame)
