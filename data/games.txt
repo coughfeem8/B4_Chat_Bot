@@ -19,3 +19,4 @@ n|Samba de Amigo|Rythm|Dreamcast
 y|Mario Party 2|Party|64
 n|Tony Hack: Pro Skater|Adventure|Dreamcast
 y|Fall Out 4|rpg|PS4
+y|Super Mario Galaxy|adventure|Wii

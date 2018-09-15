@@ -1,16 +1,35 @@
 import re,random
 
 def isInIt(list,target,print):
-	my_RegExp = re.compile(r'\|+[\w\s\"]*{0}[\w\s\"]*\|+'.format(target))
+	my_RegExp = re.compile(r'[y,n]\|+[\w\s\"]*{0}[\w\s\"]*\|+'.format(target))
 	matches = my_RegExp.finditer(list)
 	counter = 0
 	list_games = []
 	for match in matches:
 		if print:
-			#print(match.group(0)[1:-1].title())
-			list_games.append(match.group(0)[1:-1].title())
+			list_games.append(match.group(0)[2:-1].title())
+			list_games.append(match.group(0)[0:1].title())
 		counter += 1
 	return list_games
+
+def learn():
+	usr_input = input("What was the complete name of the game?\n")
+	game_genre = input("I don't know about that game, what is its genre? \n").lower()
+	file_editor = open("data/games.txt",'a')
+	if isInIt(data_string,game_genre,False) == 0: 
+		new_taste = input("I don't know that genre, Do you like it?\n").lower()
+		new_console = input("For which console?\n")
+	else:
+		new_taste = input("I know what you talking about!\nIs it a cool game? \n").lower()
+		new_console = input("For which console is it?\n")
+
+	if new_taste == "yes":
+		file_editor.write("\ny|"+usr_input.title()+"|"+game_genre+"|"+new_console)
+	elif new_taste == "no":
+		file_editor.write("\nn|"+usr_input.title()+"|"+game_genre+"|"+new_console)
+	file_editor.close()
+	print("Thanks for the recomendation! :)")
+
 
 usr_input = input("I'm a chatBoy! Ask me something related to videogames!\n")
 
@@ -45,5 +64,21 @@ for pattern in format:
 
 if answer == "":
 	print("I did not get that")
+elif len(list_games1) > 1:
+	while(True):
+		try:
+			likeCurrent = list_games1.pop()
+			currentGame = list_games1.pop()
+		except IndexError:
+			learn()
+			break
+		usr_input = input("are you talking about "+currentGame+"\n")	
+		if usr_input.lower() == "yes":
+			if likeCurrent == "Y":
+				print("I really like "+currentGame)
+			else:
+				print("I did not like "+currentGame)
+			break
+
 else:
 	print(answer+" "+list_games1[0])
