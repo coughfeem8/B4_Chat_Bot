@@ -1,6 +1,7 @@
 import re,random
 
-def isInIt(list,target,print):
+#Method to check if a keyword is in the data base
+def isInIt(list,target,print): 
 	my_RegExp = re.compile(r'[y,n]\|+[\w\s\"]*{0}[\w\s\"]*\|+'.format(target))
 	matches = my_RegExp.finditer(list)
 	counter = 0
@@ -11,7 +12,7 @@ def isInIt(list,target,print):
 			list_games.append(match.group(0)[0:1].title())
 		counter += 1
 	return list_games
-
+#Method to learn and put it on the data base
 def learn():
 	usr_input = input("What was the complete name of the game?\n")
 	game_genre = input("I don't know about that game, what is its genre? \n").lower()
@@ -30,9 +31,9 @@ def learn():
 	file_editor.close()
 	print("Thanks for the recomendation! :)")
 
-
+#Program stars
 usr_input = input("I'm a chatBoy! Ask me something related to videogames!\n")
-
+#Parse input into something the pattern can understand
 splt_str = usr_input.split(" ")
 new_format = ''
 list_games1 = [" "]
@@ -50,18 +51,15 @@ for item in splt_str:
 		for line in games_data:
 			data_string = data_string + line.lower()
 		list_games1 = isInIt(data_string,item.lower(),True)
-
 	lines.close()
-
+#Verify if it is a valid pattern
 format = open("data/format.txt",'r')
-
 answer = ""
-
 for pattern in format:
 	spltPat = pattern.split("|")
 	if spltPat[0] == new_format:
 		answer = spltPat[1].rstrip()
-
+#Provides an answer depending on the pattern
 if answer == "":
 	print("I did not get that")
 elif len(list_games1) > 1:
@@ -79,6 +77,5 @@ elif len(list_games1) > 1:
 			else:
 				print("I did not like "+currentGame)
 			break
-
 else:
 	print(answer+" "+list_games1[0])
