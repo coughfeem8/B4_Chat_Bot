@@ -8,3 +8,15 @@ play|V
 love|V
 awesome|A
 game|N
+games|N
+this|Pr
+don't|V
+favorite|A
+is|B
+want|V
+my|N
+about|Pre
+do|V
+think|V
+The|Adv
+hate|V
