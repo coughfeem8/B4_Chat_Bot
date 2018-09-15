@@ -1,4 +1,4 @@
-import re,random
+import re,random,string
 #Method to check if a keyword is in the data base
 # @retm list_games which consist in a like|game
 # format
@@ -32,9 +32,22 @@ def learn():
 	file_editor.close()
 	print("Thanks for the recomendation! :)")
 
+def randomGame():
+	games_data = open("data/games.txt",'r')
+	data_string = ""
+	for line in games_data:
+		data_string = data_string + line.lower()
+	rando = random.choice(data_string)
+	random_games = isInIt(data_string,rando,True)
+	return random_games[0]
+
 #Program stars
 usr_input = input("I'm a chatBoy! Ask me something related to videogames!\n")
 #Parse input into something the pattern can understand
+answer = ""
+if usr_input[-1] == "?":
+	usr_input = usr_input.replace('?','')
+	answer = randomGame()
 splt_str = usr_input.split(" ")
 new_format = ''
 list_games1 = [" "]
@@ -56,11 +69,10 @@ for item in splt_str:
 	lines.close()
 #Verify if it is a valid pattern
 format = open("data/format.txt",'r')
-answer = ""
 for pattern in format:
 	spltPat = pattern.split("|")
 	if spltPat[0] == new_format:
-		answer = spltPat[1].rstrip()
+		answer = answer+spltPat[1].rstrip()
 #Provides an answer depending on the pattern
 if answer == "": #In case an answer was not found
 	print("I did not get that")
@@ -82,9 +94,14 @@ elif len(list_games1) > 1:
 			break
 # If only one game matched the one mentioned by the user
 else:
-	likeCurrent = list_games1.pop()
-	currentGame = list_games1.pop()
+	likeCurrent = ""
+	currentGame = ""
+	try:
+		likeCurrent = list_games1.pop()
+		currentGame = list_games1.pop()
+	except IndexError:
+		print (answer)
 	if likeCurrent == "Y":
 		print("I really like "+currentGame)
-	else:
+	elif likeCurrent == "N":
 		print("I did not like "+currentGame)
