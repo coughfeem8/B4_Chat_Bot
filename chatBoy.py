@@ -31,7 +31,8 @@ def learn():
 		file_editor.write("\nn|"+usr_input.title()+"|"+game_genre+"|"+new_console)
 	file_editor.close()
 	print("Thanks for the recomendation! :)")
-
+# Random funciotn to pick a random game
+# in case it need to access one
 def randomGame():
 	games_data = open("data/games.txt",'r')
 	data_string = ""
@@ -45,6 +46,7 @@ def randomGame():
 usr_input = input("I'm a chatBoy! Ask me something related to videogames!\n")
 #Parse input into something the pattern can understand
 answer = ""
+#To catch if it is a question
 if usr_input[-1] == "?":
 	usr_input = usr_input.replace('?','')
 	answer = randomGame()
