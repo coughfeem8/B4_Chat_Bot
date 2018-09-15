@@ -43,13 +43,13 @@ def randomGame():
 	return random_games[0]
 
 #Program stars
-usr_input = input("I'm a chatBoy! Ask me something related to videogames!\n")
+usr_input = input("I'm a chatBoy! Let's talk about videogames!\n")
 #Parse input into something the pattern can understand
 answer = ""
 #To catch if it is a question
 if usr_input[-1] == "?":
 	usr_input = usr_input.replace('?','')
-	answer = randomGame()
+ranGame = randomGame()
 splt_str = usr_input.split(" ")
 new_format = ''
 list_games1 = [" "]
@@ -102,7 +102,7 @@ else:
 		likeCurrent = list_games1.pop()
 		currentGame = list_games1.pop()
 	except IndexError:
-		print (answer)
+		print (answer+" "+ranGame)
 	if likeCurrent == "Y":
 		print("I really like "+currentGame)
 	elif likeCurrent == "N":
