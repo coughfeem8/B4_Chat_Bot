@@ -1,8 +1,5 @@
-NVN|Me too! :)
-NANB|That game is great!
-NVVN|I don't get why
-NVPrN|Sounds like fun
-QVNVPrePr|I love it!
-NV|I like
-QNVNV|
-VNV|I do
+NVN|Me too!
+NEVN|but they are so cool!
+QBAdvAdjN|I think it is
+QVNVAdv|I think it is fun!
+NV|

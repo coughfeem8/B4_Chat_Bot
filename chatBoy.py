@@ -47,9 +47,10 @@ usr_input = input("I'm a chatBoy! Let's talk about videogames!\n")
 #Parse input into something the pattern can understand
 answer = ""
 #To catch if it is a question
+ranGame = ""
 if usr_input[-1] == "?":
 	usr_input = usr_input.replace('?','')
-ranGame = randomGame()
+	ranGame = randomGame()
 splt_str = usr_input.split(" ")
 new_format = ''
 list_games1 = [" "]
@@ -76,10 +77,9 @@ for pattern in format:
 	if spltPat[0] == new_format:
 		answer = answer+spltPat[1].rstrip()
 #Provides an answer depending on the pattern
-if answer == "": #In case an answer was not found
-	print("I did not get that")
+
 # If more than one game match the one mentioned by the user
-elif len(list_games1) > 1:
+if len(list_games1) > 1:
 	while(True):
 		try:
 			likeCurrent = list_games1.pop()
@@ -94,6 +94,8 @@ elif len(list_games1) > 1:
 			else:
 				print("I did not like "+currentGame)
 			break
+elif answer == "": #In case an answer was not found
+	print("I did not get that")
 # If only one game matched the one mentioned by the user
 else:
 	likeCurrent = ""
