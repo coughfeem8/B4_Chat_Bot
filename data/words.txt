@@ -13,3 +13,8 @@ do|V
 you|N
 think|V
 about|Adv
+Could|Q
+suggest|V
+me|N
+a|Adv
+game|N
