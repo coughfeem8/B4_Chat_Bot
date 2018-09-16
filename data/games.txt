@@ -1,0 +1,22 @@
+y|Mario Kart 64|Racing|64
+n|Golden Eye|Shooter|64
+y|The Legend of Zelda "Ocarina of Time"|Adventure|64
+y|Super Mario 64|Adventure|64
+y|Super Smash Bros|Fighting|64
+y|Banjo-Kazooie|Adventure|64
+n|Paper Mario|RPG|64
+y|Final Fantacy VII|RPG|PS1
+n|Resident Evil I|Horror|PS1
+n|Resident Evil II|Horror|PS1
+y|Metal Gear Solid|Adventure|PS1
+y|Pepsiman|Adventure|PS1
+n|Grand Tourismo|Racing|PS1
+y|Sonic Adventure|Adventure|Dreamcast
+y|Jet Set Radio|Adventure|Dreamcast
+n|The House of Dead|Horror|Dreamcast
+y|Soulcalivour|Fighting|Dreamcast
+n|Samba de Amigo|Rythm|Dreamcast
+y|Mario Party 2|Party|64
+n|Tony Hack: Pro Skater|Adventure|Dreamcast
+y|Fall Out 4|RPG|PS4
+y|Super Mario Galaxy|Adventure|Wii
