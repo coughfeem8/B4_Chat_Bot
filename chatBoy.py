@@ -21,7 +21,7 @@ def learn():
 	usr_input = input("What was the complete name of the game?\n")
 	game_genre = input("I don't know about that game, what is its genre? \n").lower()
 	file_editor = open("data/games.txt",'a')
-	if isInIt(data_string,game_genre,False) == 0: 
+	if isInIt(file_editor,game_genre,False): 
 		new_taste = input("I don't know that genre, Do you like it?\n").lower()
 		new_console = input("For which console?\n")
 	else:
@@ -35,7 +35,7 @@ def learn():
 	file_editor.close()
 	print("Thanks for the recomendation! :)")
         
-# Random funciotn to pick a random game
+# Random function to pick a random game
 # in case it need to access one
 def randomGame():
 	games_data = open("data/games.txt",'r')

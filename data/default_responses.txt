@@ -1,5 +1,5 @@
 I'm a chatBoy! Let's talk about videogames!;Hi !;hello
 I did not get that;I dont know what you are talking about;Sorry didn't get ya.
-Are you talking about {0}
-I really like ;
-I did not like;
+Are you talking about {0};Is it {0}
+I really like ;Actually i'm not a fan of
+I did not like;Actually i enjoy
